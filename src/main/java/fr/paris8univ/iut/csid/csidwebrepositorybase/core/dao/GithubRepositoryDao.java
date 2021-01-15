@@ -41,8 +41,8 @@ public class GithubRepositoryDao {
             token = bf.readLine();
         }catch (Exception e){e.printStackTrace();}
         HttpHeaders headers = new HttpHeaders();
-        headers.setBearerAuth(token);
+        headers.set(HttpHeaders.AUTHORIZATION, "token "+token);
         HttpEntity<Issue> entity = new HttpEntity<>(issue, headers);
-        template.exchange(url, HttpMethod.POST, entity, GitHubIssue.class).getBody();
+        template.exchange(url, HttpMethod.POST, entity, GitHubIssue.class);
     }
 }
