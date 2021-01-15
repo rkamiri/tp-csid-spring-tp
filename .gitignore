@@ -24,4 +24,4 @@ hs_err_pid*
 
 /target
 
-./src/main/resources/token.txt
+/src/main/resources/token.txt
